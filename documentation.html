@@ -7476,14 +7476,14 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c2de8f09-c020-4d4a-a399-8bf24f169fb6">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6bd51e87-4481-4b0f-a64d-92b611648bda">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <hr/>
-<h1 id="criteria-performance"><strong>criteria-performance</strong><a class="anchor-link" href="#criteria-performance">¶</a></h1><p><code>criteria-performance</code> est un package Python conçu pour calculer et visualiser des critères de performance des modèles de classification. Il fournit des outils pour générer et analyser des courbes ROC, PR, DET, ainsi que des métriques telles que le taux de faux positifs (FPR), le taux de vrais positifs (TPR), et l'Equal Error Rate (EER).</p>
+<h1 id="criteria-performance"><strong>criteria-performance</strong><a class="anchor-link" href="#criteria-performance">¶</a></h1><p><code>criteria-performance</code> est un package Python conçu pour calculer et visualiser des critères de performance des modèles de classification. Il fournit des outils pour générer et analyser des courbes ROC, PR, DET, ainsi que des métriques telles que le taux de faux positifs (FPR), le taux de vrais positifs (TPR) et l'Equal Error Rate (EER).</p>
 <h2 id="Installation"><strong>Installation</strong><a class="anchor-link" href="#Installation">¶</a></h2><p>Pour installer le package, utilisez la commande suivante :</p>
 <div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>criteria-performance
 </pre></div>
@@ -7499,7 +7499,7 @@ a.anchor-link {
 
 <span class="c1"># Créez un DataFrame avec les classes réelles et les scores prédits</span>
 <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">'class'</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+    <span class="s1">'class'</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
     <span class="s1">'score'</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">]</span>
 <span class="p">}</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
@@ -7529,20 +7529,33 @@ a.anchor-link {
 <div class="highlight"><pre><span></span><span class="n">pc</span><span class="o">.</span><span class="n">dispROC</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">"Courbe ROC"</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 <p><em>Exemple de visualisation :</em></p>
-<p><img alt="Exemple de Courbe ROC" src="path_to_roc_image.png"/></p>
+<p><img alt="Exemple de Courbe ROC" src="https://raw.githubusercontent.com/teach-genius/Documentation/main/courbe_ROC.png"/></p>
 <h4 id="Courbes-PR-(Pr%C3%A9cision-Rappel)"><strong>Courbes PR (Précision-Rappel)</strong><a class="anchor-link" href="#Courbes-PR-(Pr%C3%A9cision-Rappel)">¶</a></h4><p>Affiche la courbe Précision-Rappel :</p>
 <div class="highlight"><pre><span></span><span class="n">pc</span><span class="o">.</span><span class="n">dispPR</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">"Courbe Précision-Rappel"</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 <p><em>Exemple de visualisation :</em></p>
-<p><img alt="Exemple de Courbe PR" src="path_to_pr_image.png"/></p>
+<p><img alt="Exemple de Courbe PR" src="https://raw.githubusercontent.com/teach-genius/Documentation/main/courbe_P-R.png"/></p>
 <h4 id="Courbes-DET"><strong>Courbes DET</strong><a class="anchor-link" href="#Courbes-DET">¶</a></h4><p>Affiche la courbe DET (Detection Error Tradeoff) :</p>
 <div class="highlight"><pre><span></span><span class="n">pc</span><span class="o">.</span><span class="n">dispDET</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">"Courbe DET"</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 <p><em>Exemple de visualisation :</em></p>
-<p><img alt="Exemple de Courbe DET" src="path_to_det_image.png"/></p>
+<p><img alt="Exemple de Courbe DET" src="https://raw.githubusercontent.com/teach-genius/Documentation/main/courbe_DET.png"/></p>
+<div class="highlight"><pre><span></span><span class="n">pc</span><span class="o">.</span><span class="n">dispOldDET</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">"Courbe DET"</span><span class="p">)</span>
+</pre></div>
+<p><em>Ou DET :</em></p>
+<p><img alt="Exemple de Courbe DET" src="https://raw.githubusercontent.com/teach-genius/Documentation/main/courbe_hold-DET.png"/></p>
 <h4 id="Visualisation-combin%C3%A9e"><strong>Visualisation combinée</strong><a class="anchor-link" href="#Visualisation-combin%C3%A9e">¶</a></h4><p>Vous pouvez afficher plusieurs courbes ensemble et choisir de sauvegarder l'image :</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">criteria</span> <span class="kn">import</span> <span class="n">PerformanceCriteria</span><span class="p">,</span> <span class="n">Opentxt</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">Opentxt</span><span class="p">(</span><span class="s2">"Score_Sys_1.txt"</span><span class="p">)</span>
+
+<span class="n">criter</span> <span class="o">=</span> <span class="n">PerformanceCriteria</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+<span class="n">criter</span><span class="o">.</span><span class="n">displaygraphe</span><span class="p">(</span><span class="n">save</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">point</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cp</span><span class="o">=</span><span class="s2">"red"</span><span class="p">)</span>
+<span class="n">criter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
 <div class="highlight"><pre><span></span><span class="n">pc</span><span class="o">.</span><span class="n">displaygraphe</span><span class="p">(</span><span class="n">taille</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">save</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"criteres_performance"</span><span class="p">)</span>
 </pre></div>
+<p><img alt="Exemple de Courbe DET" src="https://raw.githubusercontent.com/teach-genius/Documentation/main/criteres_performance.png"/></p>
 <h4 id="Interactive-Plot"><strong>Interactive Plot</strong><a class="anchor-link" href="#Interactive-Plot">¶</a></h4><p>Ajoutez des curseurs interactifs sur le graphique pour naviguer à travers les points de données :</p>
 <div class="highlight"><pre><span></span><span class="n">pc</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -7568,7 +7581,7 @@ a.anchor-link {
 <p><strong>Code d'initialisation :</strong></p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">criteria</span> <span class="kn">import</span> <span class="n">PerformanceCriteria</span>
 
-<span class="c1"># Initialisation aveleun DataFra precedentas</span>
+<span class="c1"># Initialisation avec le DataFrame précédent</span>
 <span class="n">pc</span> <span class="o">=</span> <span class="n">PerformanceCriteria</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 <hr/>
@@ -7598,20 +7611,6 @@ a.anchor-link {
 <span class="n">pc</span><span class="o">.</span><span class="n">displaygraphe</span><span class="p">(</span><span class="n">taille</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">point</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 <hr/>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=3f6f1301-a8c8-4bc1-b624-0fc4f758963b">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-</div>
 </div>
 </div>
 </div>
